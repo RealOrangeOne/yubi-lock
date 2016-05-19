@@ -1,4 +1,5 @@
 import yubico
+from yubi_lock.api.user import get_username
 
 
 def get_all_yubikeys(debug):
@@ -12,3 +13,7 @@ def get_all_yubikeys(debug):
     except yubico.yubikey.YubiKeyError:
         pass
     return keys
+
+
+def generate_ident(key):
+    return "{}:{}".format(get_username(), key.serial())
