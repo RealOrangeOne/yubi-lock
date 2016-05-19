@@ -14,3 +14,10 @@ def store_key(ident):
 
     with open(os.path.join(BASE_DIR, "data/keys.json"), 'w') as file:
         json.dump(existing_data, file)
+
+
+def has_ident(ident):
+    with open(os.path.join(BASE_DIR, "data/keys.json")) as file:
+        existing_data = json.load(file)
+
+    return ident in existing_data
