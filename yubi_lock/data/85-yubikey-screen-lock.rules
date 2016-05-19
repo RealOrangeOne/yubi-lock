@@ -1,0 +1,2 @@
+SUBSYSTEM=="usb", ACTION=="remove", ENV{ID_VENDOR_ID}=="1050", RUN+="yubi-lock handle enable"
+SUBSYSTEM=="usb", ACTION=="add", ENV{ID_VENDOR_ID}=="1050", RUN+="yubi-lock handle disable"
