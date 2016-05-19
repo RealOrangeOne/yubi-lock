@@ -11,7 +11,7 @@ logging.getLogger("requests").setLevel(logging.WARNING)
 class YubiLockCLI(click.MultiCommand):
 
     def list_commands(self, ctx):
-        return ['status', 'install']
+        return ['status', 'install', 'handle', 'register']
 
     def get_command(self, ctx, name):
         ns = {}
